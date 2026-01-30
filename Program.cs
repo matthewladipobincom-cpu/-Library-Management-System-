@@ -86,7 +86,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment()|| app.Environment.IsProduction())
 {
     app.MapOpenApi();
     app.UseSwagger();
@@ -96,6 +96,9 @@ if (app.Environment.IsDevelopment())
         options.RoutePrefix = string.Empty; // Swagger at root
     });
 }
+
+
+
 
 app.UseHttpsRedirection();
 app.UseAuthentication();

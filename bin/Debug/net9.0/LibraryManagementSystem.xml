@@ -9,6 +9,34 @@
             Handles authentication-related operations such as user registration and login.
             </summary>
         </member>
+        <member name="M:_Library_Management_System_.Controllers.AuthController.#ctor(AppDbContext,JwtTokenGenerator,Microsoft.Extensions.Logging.ILogger{_Library_Management_System_.Controllers.AuthController})">
+            <summary>
+            Initializes a new instance of the AuthController class.
+            </summary>
+            <param name="context">The application database context.</param>
+            <param name="jwt">The JWT token generator service.</param>
+            <param name="logger">The logger instance.</param>
+        </member>
+        <member name="M:_Library_Management_System_.Controllers.AuthController.Register(RegisterRequest)">
+            <summary>
+            Registers a new user with the provided details.
+            </summary>
+            <param name="request">The registration request containing user details.</param>
+            <returns>An IActionResult indicating success or failure of registration.</returns>
+        </member>
+        <member name="M:_Library_Management_System_.Controllers.AuthController.Login(LoginRequest)">
+            <summary>
+            Authenticates a user and returns a JWT token upon successful login.
+            </summary>
+            <param name="request">The login request containing email and password.</param>
+            <returns>An IActionResult containing the JWT token or an error message.</returns>
+        </member>
+        <member name="M:_Library_Management_System_.Controllers.AuthController.AdminEndpoint">
+            <summary>
+            Provides access to admin-only resources.
+            </summary>
+            <returns>An IActionResult indicating admin access.</returns>
+        </member>
         <member name="T:_Library_Management_System_.Migrations.InitialCreate">
             <inheritdoc />
         </member>
@@ -32,6 +60,19 @@
         </member>
         <member name="M:_Library_Management_System_.Migrations.thirdMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
+        </member>
+        <member name="M:BooksController.#ctor(IBookService)">
+            <summary>
+            Initializes a new instance of the BooksController class.
+            </summary>
+            <param name="service">The book service instance.</param>
+        </member>
+        <member name="M:BooksController.GetBook(System.Int32)">
+            <summary>
+            Retrieves a specific book by its ID.
+            </summary>
+            <param name="id">The ID of the book to retrieve.</param>
+            <returns>An IActionResult containing the book or NotFound if not found.</returns>
         </member>
         <member name="M:BooksController.GetBooksGroupedByAuthor">
             <summary>
