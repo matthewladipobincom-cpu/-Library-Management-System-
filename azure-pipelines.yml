@@ -1,4 +1,14 @@
 # ASP.NET Core (.NET 9.0) Library Management System Pipeline
+- task: AzureRmWebAppDeployment@5
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(4b777e1d-cb57-40b5-a081-081b2accd7c7)'
+    appType: 'webApp'
+    WebAppName: 'LibraryManagementSystem'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'appsvc_windows_southafricanorth'
+    SlotName: 'production'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 # Build and deploy ASP.NET Core Web API to Azure
 
 trigger:
