@@ -1,16 +1,4 @@
-# ASP.NET Core (.NET 9.0) Library Management System Pipeline
-- task: AzureRmWebAppDeployment@5
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure subscription 1(4b777e1d-cb57-40b5-a081-081b2accd7c7)'
-    appType: 'webApp'
-    WebAppName: 'LibraryManagementSystem'
-    deployToSlotOrASE: true
-    ResourceGroupName: 'appsvc_windows_southafricanorth'
-    SlotName: 'production'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 # Build and deploy ASP.NET Core Web API to Azure
-
 trigger:
 - main
 
@@ -53,3 +41,16 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
+# Move the deployment task to the end of the steps
+- task: AzureRmWebAppDeployment@5
+  displayName: 'Deploy to Azure Web App'
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(4b777e1d-cb57-40b5-a081-081b2accd7c7)'
+    appType: 'webApp'
+    WebAppName: 'LibraryManagementSystem'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'appsvc_windows_southafricanorth'
+    SlotName: 'production'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
