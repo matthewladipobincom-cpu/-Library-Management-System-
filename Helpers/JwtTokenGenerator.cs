@@ -22,7 +22,7 @@ public class JwtTokenGenerator
         };
 
         var key = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            Encoding.UTF8.GetBytes(_config["Jwt:Key"] ?? throw new InvalidOperationException("Jwt:Key is not configured")));
 
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
