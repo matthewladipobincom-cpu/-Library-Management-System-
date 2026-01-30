@@ -76,6 +76,10 @@ public class BooksController : ControllerBase
 {
     private readonly IBookService _service;
 
+    /// <summary>
+    /// Initializes a new instance of the BooksController class.
+    /// </summary>
+    /// <param name="service">The book service instance.</param>
     public BooksController(IBookService service)
     {
         _service = service;
@@ -86,6 +90,11 @@ public class BooksController : ControllerBase
     public async Task<IActionResult> GetBooks()
         => Ok(await _service.GetAllBooksAsync());
 
+    /// <summary>
+    /// Retrieves a specific book by its ID.
+    /// </summary>
+    /// <param name="id">The ID of the book to retrieve.</param>
+    /// <returns>An IActionResult containing the book or NotFound if not found.</returns>
     [Authorize(Roles = "User,Admin")]
     [HttpGet("{id}")]
     public async Task<IActionResult> GetBook(int id)

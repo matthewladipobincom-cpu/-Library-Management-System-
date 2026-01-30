@@ -30,6 +30,11 @@ namespace _Library_Management_System_.Controllers
         _logger = logger;
     }
 
+    /// <summary>
+    /// Registers a new user with the provided details.
+    /// </summary>
+    /// <param name="request">The registration request containing user details.</param>
+    /// <returns>An IActionResult indicating success or failure of registration.</returns>
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterRequest request)
     {
@@ -81,6 +86,10 @@ namespace _Library_Management_System_.Controllers
         return Ok(new { token });
     }
 
+    /// <summary>
+    /// Provides access to admin-only resources.
+    /// </summary>
+    /// <returns>An IActionResult indicating admin access.</returns>
     [Authorize(Roles = "Admin")]
     [HttpGet("admin")]
     public IActionResult AdminEndpoint()
