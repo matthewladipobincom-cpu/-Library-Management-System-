@@ -31,7 +31,7 @@ public class JwtTokenGenerator
             audience: _config["Jwt:Audience"],
             claims: claims,
             expires: DateTime.UtcNow.AddMinutes(
-                int.Parse(_config["Jwt:DurationInMinutes"])),
+                int.Parse(_config["Jwt:DurationInMinutes"] ?? throw new InvalidOperationException("Jwt:DurationInMinutes is not configured"))),
             signingCredentials: creds
         );
 

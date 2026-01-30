@@ -17,6 +17,12 @@ namespace _Library_Management_System_.Controllers
     private readonly JwtTokenGenerator _jwt;
     private readonly ILogger<AuthController> _logger;
 
+    /// <summary>
+    /// Initializes a new instance of the AuthController class.
+    /// </summary>
+    /// <param name="context">The application database context.</param>
+    /// <param name="jwt">The JWT token generator service.</param>
+    /// <param name="logger">The logger instance.</param>
     public AuthController(AppDbContext context, JwtTokenGenerator jwt, ILogger<AuthController> logger)
     {
         _context = context;
@@ -48,6 +54,11 @@ namespace _Library_Management_System_.Controllers
     }
 
 
+    /// <summary>
+    /// Authenticates a user and returns a JWT token upon successful login.
+    /// </summary>
+    /// <param name="request">The login request containing email and password.</param>
+    /// <returns>An IActionResult containing the JWT token or an error message.</returns>
     [HttpPost("login")]
     public IActionResult Login([FromBody] LoginRequest request)
     {
