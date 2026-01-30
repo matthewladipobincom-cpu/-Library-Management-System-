@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LibraryManagementSystem</name>
+    </assembly>
+    <members>
+        <member name="T:_Library_Management_System_.Controllers.AuthController">
+            <summary>
+            Handles authentication-related operations such as user registration and login.
+            </summary>
+        </member>
+        <member name="T:_Library_Management_System_.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:_Library_Management_System_.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:_Library_Management_System_.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:_Library_Management_System_.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:_Library_Management_System_.Migrations.thirdMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:_Library_Management_System_.Migrations.thirdMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:_Library_Management_System_.Migrations.thirdMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:_Library_Management_System_.Migrations.thirdMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BooksController.GetBooksGroupedByAuthor">
+            <summary>
+            Retrieve books grouped by author
+            </summary>
+        </member>
+        <member name="M:BooksController.GetTopBorrowedBooks">
+            <summary>
+            Retrieve top 3 most borrowed books
+            </summary>
+        </member>
+        <member name="M:BooksController.GetExternalBookDetails(System.Int32,IExternalBookService)">
+            <summary>
+            Simulates fetching book details from an external API
+            </summary>
+        </member>
+    </members>
+</doc>
